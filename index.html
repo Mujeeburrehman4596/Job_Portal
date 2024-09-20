@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">JobPortal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="job.html">Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4">Find Your Dream Job</h1>
+            <p class="lead">Browse thousands of job listings and apply today</p>
+            <input type="text" id="searchInput" class="form-control mt-4" placeholder="Search for jobs...">
+        </div>
+    </section>
+
+    <!-- Job Listings Section -->
+    <section class="job-listings py-5">
+        <div class="container">
+            <div class="row" id="jobCards">
+                <!-- Job Card 1 -->
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">UI/UX Designer</h5>
+                            <p class="card-text">Location: San Francisco | Type: Part-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('UI/UX Designer', 'Design user interfaces and experiences...', 'San Francisco', 'Part-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Frontend Developer</h5>
+                            <p class="card-text">Location: Remote | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Frontend Developer', 'Develop and maintain web applications...', 'Remote', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Backend Developer</h5>
+                            <p class="card-text">Location: New York | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Backend Developer', 'Develop server-side logic and database...', 'New York', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analyst</h5>
+                            <p class="card-text">Location: Chicago | Type: Part-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Data Analyst', 'Analyze data trends for insights...', 'Chicago', 'Part-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Mobile App Developer</h5>
+                            <p class="card-text">Location: Remote | Type: Contract</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Mobile App Developer', 'Develop mobile applications for iOS and Android...', 'Remote', 'Contract')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Manager</h5>
+                            <p class="card-text">Location: London | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Project Manager', 'Oversee project deliverables and timelines...', 'London', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">DevOps Engineer</h5>
+                            <p class="card-text">Location: Berlin | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('DevOps Engineer', 'Manage cloud infrastructure and deployment...', 'Berlin', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Graphic Designer</h5>
+                            <p class="card-text">Location: Remote | Type: Freelance</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Graphic Designer', 'Create visual designs for digital content...', 'Remote', 'Freelance')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Marketing Specialist</h5>
+                            <p class="card-text">Location: Paris | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Marketing Specialist', 'Design and execute marketing strategies...', 'Paris', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Product Manager</h5>
+                            <p class="card-text">Location: Tokyo | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Product Manager', 'Define product vision and roadmap...', 'Tokyo', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Content Writer</h5>
+                            <p class="card-text">Location: Remote | Type: Freelance</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Content Writer', 'Write compelling content for blogs and websites...', 'Remote', 'Freelance')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Analyst</h5>
+                            <p class="card-text">Location: New York | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Business Analyst', 'Analyze business processes and provide insights...', 'New York', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Social Media Manager</h5>
+                            <p class="card-text">Location: Los Angeles | Type: Part-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Social Media Manager', 'Manage and grow social media presence...', 'Los Angeles', 'Part-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales Manager</h5>
+                            <p class="card-text">Location: Dubai | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Sales Manager', 'Develop and lead sales strategies...', 'Dubai', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Cybersecurity Analyst</h5>
+                            <p class="card-text">Location: Singapore | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Cybersecurity Analyst', 'Identify and mitigate security threats...', 'Singapore', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Engineer</h5>
+                            <p class="card-text">Location: Remote | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('AI Engineer', 'Develop AI algorithms and models...', 'Remote', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">HR Specialist</h5>
+                            <p class="card-text">Location: Boston | Type: Part-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('HR Specialist', 'Manage recruitment and employee relations...', 'Boston', 'Part-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Network Administrator</h5>
+                            <p class="card-text">Location: Seattle | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Network Administrator', 'Maintain and configure network systems...', 'Seattle', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Developer</h5>
+                            <p class="card-text">Location: Austin | Type: Contract</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Web Developer', 'Build and optimize websites for performance...', 'Austin', 'Contract')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">QA Tester</h5>
+                            <p class="card-text">Location: Miami | Type: Part-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('QA Tester', 'Test software applications for quality assurance...', 'Miami', 'Part-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Cloud Engineer</h5>
+                            <p class="card-text">Location: Toronto | Type: Full-Time</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jobModal" onclick="showJobDetails('Cloud Engineer', 'Design and manage cloud infrastructure solutions...', 'Toronto', 'Full-Time')">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Details Modal -->
+    <div class="modal fade" id="jobModal" tabindex="-1" role="dialog" aria-labelledby="jobModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jobModalLabel">Job Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="jobDescription">
+                    <!-- Job details here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
